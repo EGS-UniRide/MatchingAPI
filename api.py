@@ -31,7 +31,7 @@ body = api.model('objects', dict(
 ))
 
 
-@ns.route('/match')
+@ns.route('/v1/match')
 @api.doc(responses={200: "Success"})
 @api.doc(responses={404: "Match not found"})
 @api.doc(responses={400: "Bad request"})
@@ -55,8 +55,9 @@ class MatchingAPI(Resource):
                 obj = body_req[key]
             if ("list" in str(type(body_req[key]))):
                 lst = body_req[key]
-            else:
-                abort(400, 'Bad request: there\'s a type error on a key of the body request.')
+           
+        if (len(obj) == 0 or len(lst) == 0):
+            abort(400, 'Bad request: there\'s a type error on a key of the body request.')
 
         equals = {}
         index = 0
