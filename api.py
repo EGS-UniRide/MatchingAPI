@@ -1,8 +1,10 @@
 from flask import *
 from flask_restx import Api, Resource, Namespace, fields
+from flask_cors import CORS
 import math
 
 app = Flask(__name__)
+cors = CORS(app)
 api = Api(app, version='1.0', title="Matching API",
           description='An API that evaluates the similarities between an object and a list of objects.' +
           '\nIt returns the objects that have more than 50% of similarity.')
