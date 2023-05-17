@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+    matching-api:
+        image: matching-api
+        container_name: matching-api
+        build:
+            context: .
+            network: host
+            dockerfile: Dockerfile
+        ports:
+            - 8030:8030
