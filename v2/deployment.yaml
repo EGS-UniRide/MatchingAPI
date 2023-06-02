@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: matching-api
-        image: registry.deti:5000/egs-uniride/matching-api
+        image: registry.deti:5000/egs-uniride/matching_api:0000
         ports:
           - containerPort: 8030
 ---
