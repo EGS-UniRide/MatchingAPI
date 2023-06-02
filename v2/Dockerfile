@@ -3,4 +3,5 @@ WORKDIR /app
 COPY ./requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 COPY . /app
+EXPOSE 8030/tcp
 CMD [ "python3", "api.py" ]
